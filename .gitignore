@@ -1,0 +1,10 @@
+.vs
+obj
+*.sln
+*.vcxproj*
+addons
+bin/*
+!bin/data
+log
+save/*.xml
+
