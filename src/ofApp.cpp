@@ -18,6 +18,10 @@ void ofApp::setup(){
 	ui->addIntSlider("cursorNum", 0, 100, &cursorNum);
 	ui->autoSizeToFitWidgets();
 
+	// default
+	cursorLifeTime = 10;
+	cursorGenFreq = 0.1;
+
 	screenAreaReshape();
 }
 
@@ -163,6 +167,12 @@ void ofApp::loadConfig() {
 
 	ofxXmlSettings xml;
 	string configFilename = "config.xml";
+
+	// if not exists, load default
+	if (!ofFile(configFilename).isFile()) {
+		configFilename = "config-sample.xml";
+	}
+
 	xml.loadFile(configFilename);
 
 	if (xml.pushTag("config")) {

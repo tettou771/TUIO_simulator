@@ -6,5 +6,5 @@ addons
 bin/*
 !bin/data
 log
-save/*.xml
+config.xml
 
