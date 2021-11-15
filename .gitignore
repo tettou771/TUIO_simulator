@@ -1,7 +1,16 @@
+// VisualStudio
 .vs
 obj
 *.sln
 *.vcxproj*
+
+// Xcode
+Makefile
+*.xcconfig
+*.xcodeproj
+openFrameworks-Info.plist
+config.make
+
 addons
 bin/*
 !bin/data

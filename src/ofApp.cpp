@@ -20,14 +20,16 @@ void ofApp::setup(){
 
 	// default
 	cursorLifeTime = 10;
-	cursorGenFreq = 0.1;
+	cursorGenFreq = 0.2;
 
 	screenAreaReshape();
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
-	int genNum = ofRandom(0, 1.0) + cursorGenFreq / ofGetFrameRate();
+    int genNum = 0;
+    float fps = ofGetFrameRate();
+    if (fps > 0) genNum = ofRandom(0, 1.0) + cursorGenFreq / fps;
 	for (int i = 0; i < genNum; ++i) {
 		cursorRandomGenerate();
 	}
